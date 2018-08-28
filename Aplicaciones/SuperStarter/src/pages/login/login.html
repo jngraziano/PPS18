@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Carga Credito</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  padding>  
+  <form (submit)="doLogin()">
+      
+    <ion-list inset>
+    <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="200px" height="200px">
+    
+      <!-- <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item> -->
+
+      
+      <!-- Want to use a Username instead of an Email? Here you go: -->
+      <div padding>
+      <ion-item>
+        <ion-label floating>Usuario</ion-label>
+        <ion-input type="text" name="username"></ion-input>
+      </ion-item>
+     
+
+      <ion-item>
+        <ion-label floating>Contraseña</ion-label>
+        <ion-input type="password" name="password"></ion-input>
+      </ion-item>
+
+        <button ion-button color="primary" block>Ingresar</button>
+
+      </div>
+    </ion-list>
+  </form>
+  </ion-content>
+
+  
+
+      <ion-footer>
+        <ion-list padding margin>
+        <button block ion-button icon-people color="dark" (click)="mostrarUsuarios()">
+        <ion-icon name="people"></ion-icon>
+        Ingresar como...
+      </button>
+      </ion-list>
+      </ion-footer>
+ 
+
+
