@@ -11,19 +11,25 @@ Node.js command prompt (alternative click)
 Run as administrator. $ npm -g install npm.
 remove C:\Program Files\nodejs\npm.cmd the new npm will be at C:\Users\username\appdata\roaming\npm\npm.cmd.
 
-Angular
+ANGULAR
 https://cli.angular.io/
 Ejecutar una ventana de comandos desde donde quiero que tenga la carpeta. 
 npm install -g @angular/cli
+ng new nombreapp
+cd nombreapp
+ng serve
 
 ir http://localhost:4200/
 
+IONIC
 https://dashboard.ionicframework.com/welcome
 jngraziano
 Gss$
 
+
 firebase
 https://firebase.google.com/?hl=es-419
+
 
 splash screen ionic
 
