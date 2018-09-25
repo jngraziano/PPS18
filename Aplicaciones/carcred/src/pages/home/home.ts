@@ -7,8 +7,15 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  splash = true;
+  // secondPage = SecondPagePage;
+
   constructor(public navCtrl: NavController) {
 
+  }
+
+  ionViewDidLoad() {
+    setTimeout(() => this.splash = false, 4000);
   }
 
 }
