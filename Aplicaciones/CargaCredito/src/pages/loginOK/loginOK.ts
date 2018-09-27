@@ -13,10 +13,10 @@ import { MainPage } from '../';
 */
 @IonicPage()
 @Component({
-  selector: 'page-welcome',
-  templateUrl: 'welcome.html'
+  selector: 'loginOK',
+  templateUrl: 'loginOK.html'
 })
-export class WelcomePage {
+export class loginOK {
   
   loginFields: { email: string, password: string } = {
     email: '',

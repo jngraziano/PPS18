@@ -1,15 +1,15 @@
 <ion-header>
-
+ 
   <ion-navbar>
-    <ion-title>Carga Credito</ion-title>
+    <ion-title>Bienvenido!  </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content  padding>  
+<ion-content  padding class="iContent">  
   <form (submit)="doLogin()">
-      
+    
     <ion-list inset>
     <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="200px" height="200px">
     
@@ -23,16 +23,16 @@
       <div padding>
       <ion-item>
         <ion-label floating>Usuario</ion-label>
-        <ion-input type="text" name="username"></ion-input>
+        <ion-input type="email" [(ngModel)]="loginFields.email" name="loginEmail"></ion-input>
       </ion-item>
      
 
       <ion-item>
-        <ion-label floating>Contraseña</ion-label>
-        <ion-input type="password" name="password"></ion-input>
+        <ion-label floating >Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="loginFields.password" name="loginContra"></ion-input>
       </ion-item>
 
-        <button ion-button color="primary" block>Ingresar</button>
+        <button ion-button class="login" block>Ingresar</button>
 
       </div>
     </ion-list>

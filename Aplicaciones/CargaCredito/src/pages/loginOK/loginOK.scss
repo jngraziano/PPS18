@@ -1,4 +1,4 @@
-page-welcome {
+loginOK {
   .splash-bg {
     position: relative;
     background: url('../assets/img/splashbg.png') no-repeat transparent;
@@ -35,12 +35,12 @@ page-welcome {
   }
   button.login {
     margin-top: 25px;
-    background-color: white;
+    background-color: lightblue;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
     color: #333;
 
     &.activated {
-      background-color: rgb(220, 220, 220);
+      background-color: blue;
     }
   }
   ion-title{
@@ -50,4 +50,13 @@ page-welcome {
       text-align: center;
 
   }
+  .iContent{
+    background-image: url('../../../Archivos/background.jpg');
+    // background: url('../../../Archivos/background.jpg');
+    // background-repeat: no-repeat;
+    // background-size:cover;
+    // ##  Heading
+  }
+  
+  
 }

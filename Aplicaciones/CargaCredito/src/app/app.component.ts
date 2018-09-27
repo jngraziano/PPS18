@@ -27,13 +27,13 @@ import { Settings } from '../providers';
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = 'WelcomePage';
+  rootPage = 'loginOK';
 
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
     { title: 'Tutorial', component: 'TutorialPage' },
-    { title: 'Welcome', component: 'WelcomePage' },
+    { title: 'loginOK', component: 'loginOK' },
     { title: 'Tabs', component: 'TabsPage' },
     { title: 'Cards', component: 'CardsPage' },
     { title: 'Content', component: 'ContentPage' },
