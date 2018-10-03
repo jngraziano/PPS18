@@ -1,12 +1,13 @@
 export class Usuario {
     id: number;         // id, del 1 al 3 para los 5 personajes
-    nombre: string;     // email segun la consigna...
-    clave: string;      // contraseña
-    perfil: string;     // puede ser: admin || usuario || tester || invitado
+    usMail: string;     // email segun la consigna...
+    usPass: string;      // contraseña
+    perfil: string;     // puede ser: admin || usuario 
     sexo: string;       // puede ser Female || Male
   
-    constructor(){
-      
+    constructor(email:string,password:string){
+      this.usMail=email;
+      this.usPass=password;
     }
   
     dameJSON() {

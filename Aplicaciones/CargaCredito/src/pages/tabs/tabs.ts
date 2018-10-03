@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
-import { Tab1Root} from '../';
+// import { Tab1Root} from '../';
 
 @IonicPage()
 @Component({
@@ -10,7 +10,7 @@ import { Tab1Root} from '../';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-  tab1Root: any = Tab1Root;
+  // tab1Root: any = Tab1Root;
 
 
   tab1Title = "#QR#";

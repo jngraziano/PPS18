@@ -17,7 +17,7 @@
   <ion-content>
  
   <!-- FORM QUE VA AL doLogin del ts. -->
-  <form (submit)="doLogin()">
+  <!-- <form (submit)="doLogin()"> -->
   <ion-list>
   <!-- <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="100px" height="100px"> -->
     
@@ -48,17 +48,17 @@
       <!-- </div> -->
 
       <div padding>
-        <button large ion-button class="login" (onclick)="login()" block>Ingresar</button>
+        <button large ion-button class="login" (click)="doLogin()" block>Ingresar</button>
       </div>
 
     </ion-list>
-  </form>
+  <!-- </form> -->
   </ion-content>
 
  
       <ion-footer>
         <ion-list padding margin>
-        <button block ion-button icon-people color="dark" (click)="mostrarUsuarios()">
+        <button block ion-button large color="dark" (click)="mostrarUsuarios()">
         <ion-icon name="people"></ion-icon>
         Ingresar como...
       </button>

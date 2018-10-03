@@ -27,6 +27,8 @@ export class loginOK {
     password: ''
   };
 
+  cuentas: Array<Usuario>;
+
     // Our translated text strings
     private loginErrorString: string;
 
@@ -65,10 +67,59 @@ export class loginOK {
     });
   */
 
-    // MIO
-    this.ListadoUsuarios.array.forEach(element => {
+    // MIO FALTA FIREBASE
+    let flagNotOK: number=0;
+    let user: Usuario = new Usuario("","");
+
+    if (this.loginFields.email != "" && this.loginFields.password != "") {
+      user.usMail=this.loginFields.email  
+      user.usPass=this.loginFields.password;
+      this.navCtrl.push(MainPage);
+    }
+  //  else if (condition) {
+     
+  //  }
+    else{
+      let toast = this.toastCtrl.create({
+              message: "Debe completar los campos.",
+              duration: 3000,
+              position: 'top'
+            });
+            toast.present();
+            flagNotOK=1;
+
+    }
+   
       
-    });
+    // if(us)
+
+  //   if(this.ListadoUsuarios == undefined)
+  //   {
+  //     let toast = this.toastCtrl.create({
+  //       message: "Debe completar los campos.",
+  //       duration: 3000,
+  //       position: 'top'
+  //     });
+  //     toast.present();
+  //     flagNotOK=1;
+  //   }
+  //   else {
+  //   this.ListadoUsuarios.forEach((element) =>{
+  //     this.cuentas = element;
+  //     let user: Usuario = this.cuentas.find(elem => ( this.loginFields.email == elem.usMail 
+  //                                                && (this.loginFields.password == elem.usPass)));
+  
+  //     if (user !== undefined) {
+  //       this.navCtrl.push(MainPage);
+        
+  //     }
+  //     else {
+  //       alert("Acceso denegado.");
+  //     }
+    
+  //   });
+
+  // }
 
 
 
@@ -100,7 +151,7 @@ export class loginOK {
 
       case 2:
       this.loginFields.email = "usuario@gmail.com";
-      this.loginFields.password = '33';
+      this.loginFields.password = '22';
         break;
 
     
