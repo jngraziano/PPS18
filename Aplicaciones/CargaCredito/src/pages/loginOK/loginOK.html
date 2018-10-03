@@ -7,11 +7,19 @@
 </ion-header>
 
 
-<ion-content  padding class="iContent">  
+
+
+
+
+  <!-- anterior: -->
+  <!-- <ion-content  padding class="iContent">   -->
+  <!-- <div class="contenidoParaLogin"> -->
+  <ion-content>
+ 
+  <!-- FORM QUE VA AL doLogin del ts. -->
   <form (submit)="doLogin()">
-    
-    <ion-list inset>
-    <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="200px" height="200px">
+  <ion-list>
+  <!-- <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="100px" height="100px"> -->
     
       <!-- <ion-item>
       <ion-label fixed>Email</ion-label>
@@ -24,27 +32,30 @@
 
       <!-- LOGIN OK -->
 
-      <div padding>
+      <!-- <div class="ingreso"> -->
+      <!-- <ion-item padding style="background: transparent;"> -->
       <ion-item>
-        <ion-label floating>Usuario</ion-label>
-        <ion-input type="email" [(ngModel)]="loginFields.email" name="loginEmail"></ion-input>
+        <ion-label  color="dark" fixed>Email</ion-label>
+        <ion-input  type="email" [(ngModel)]="loginFields.email" name="loginEmail"></ion-input>
       </ion-item>
      
 
+      <!-- <ion-item padding style="background: transparent;"> -->
       <ion-item>
-        <ion-label floating >Contraseña</ion-label>
+        <ion-label color="dark" fixed>Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="loginFields.password" name="loginContra"></ion-input>
       </ion-item>
+      <!-- </div> -->
 
-        <button ion-button class="login"  block>Ingresar</button>
-
+      <div padding>
+        <button large ion-button class="login" (onclick)="login()" block>Ingresar</button>
       </div>
+
     </ion-list>
   </form>
   </ion-content>
 
-  
-
+ 
       <ion-footer>
         <ion-list padding margin>
         <button block ion-button icon-people color="dark" (click)="mostrarUsuarios()">
@@ -53,6 +64,6 @@
       </button>
       </ion-list>
       </ion-footer>
- 
+    <!-- </div> -->
 
 

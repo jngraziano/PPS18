@@ -1,3 +1,5 @@
+import { Usuario } from './../../clases/usuario';
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, ActionSheetController } from 'ionic-angular';
@@ -17,6 +19,8 @@ import { MainPage } from '../';
   templateUrl: 'loginOK.html'
 })
 export class loginOK {
+
+  ListadoUsuarios: Observable<Usuario[]>;
   
   loginFields: { email: string, password: string } = {
     email: '',
@@ -37,12 +41,16 @@ export class loginOK {
     })
    }
 
-   //  INGRESAR
-  login() {
-    this.navCtrl.push('LoginPage');
-  }
+ 
+  // login() {
+  //   alert("Estoy en login()");
+  //   this.navCtrl.push('LoginPage');
+  // }
 
+  //Funcion que va desde el form que borre en el html.
   doLogin() {
+
+   /* funcion original:
     this.user.login(this.loginFields).subscribe((resp) => {
       this.navCtrl.push(MainPage);
     }, (err) => {
@@ -55,6 +63,15 @@ export class loginOK {
       });
       toast.present();
     });
+  */
+
+    // MIO
+    this.ListadoUsuarios.array.forEach(element => {
+      
+    });
+
+
+
   }
   mostrarUsuarios(){
     let actionSheet = this.actionSheetCtrl.create({
@@ -63,10 +80,8 @@ export class loginOK {
       cssClass: 'actSheet',
       buttons: [
         { text: 'admin', handler: () => {this.setLog(1);}},
-        { text: 'invitado', handler: () => {this.setLog(2);}},
-        { text: 'usuario', handler: () => {this.setLog(3);}},
-        { text: 'anonimo', handler: () => {this.setLog(4);}},
-        { text: 'tester', handler: () => {this.setLog(5);}},
+        { text: 'usuario', handler: () => {this.setLog(2);}},
+       
         {
           text: 'Cancelar', cssClass: 'btnCancel', role: 'cancel', handler: () => {  }
         }
@@ -84,24 +99,10 @@ export class loginOK {
         break;
 
       case 2:
-      this.loginFields.email = "invitado@gmail.com";
-      this.loginFields.password = '22';
-        break;
-
-      case 3:
       this.loginFields.email = "usuario@gmail.com";
       this.loginFields.password = '33';
         break;
 
-      case 4:
-      this.loginFields.email = "anonimo@gmail.com";
-      this.loginFields.password = '44';
-        break;
-
-      case 5:
-      this.loginFields.email = "tester@gmail.com";
-      this.loginFields.password = '55';
-        break;
     
       default:
         break;
