@@ -37,6 +37,7 @@ export class loginOK {
     })
    }
 
+   //  INGRESAR
   login() {
     this.navCtrl.push('LoginPage');
   }
