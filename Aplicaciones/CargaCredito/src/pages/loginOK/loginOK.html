@@ -1,3 +1,4 @@
+
 <ion-header>
  
   <ion-navbar>
@@ -13,11 +14,12 @@
 
   <!-- anterior: -->
   <!-- <ion-content  padding class="iContent">   -->
-  <!-- <div class="contenidoParaLogin"> -->
+
   <ion-content>
  
   <!-- FORM QUE VA AL doLogin del ts. -->
   <!-- <form (submit)="doLogin()"> -->
+ 
   <ion-list>
   <!-- <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="100px" height="100px"> -->
     
@@ -34,14 +36,14 @@
 
       <!-- <div class="ingreso"> -->
       <!-- <ion-item padding style="background: transparent;"> -->
-      <ion-item>
+      <ion-item class="itemEdit">
         <ion-label  color="dark" fixed>Email</ion-label>
         <ion-input  type="email" [(ngModel)]="loginFields.email" name="loginEmail"></ion-input>
       </ion-item>
      
 
       <!-- <ion-item padding style="background: transparent;"> -->
-      <ion-item>
+      <ion-item  class="itemEdit">
         <ion-label color="dark" fixed>Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="loginFields.password" name="loginContra"></ion-input>
       </ion-item>
@@ -52,18 +54,20 @@
       </div>
 
     </ion-list>
+
+    <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="200px" height="200px">
   <!-- </form> -->
   </ion-content>
 
  
       <ion-footer>
         <ion-list padding margin>
-        <button block ion-button large color="dark" (click)="mostrarUsuarios()">
+        <button block ion-button large color="dark" class="listaus" (click)="mostrarUsuarios()">
         <ion-icon name="people"></ion-icon>
-        Ingresar como...
+          Ingresar como...
       </button>
       </ion-list>
       </ion-footer>
-    <!-- </div> -->
+    
 
 

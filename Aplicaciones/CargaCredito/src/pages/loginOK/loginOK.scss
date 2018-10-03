@@ -8,26 +8,42 @@ loginOK {
   //   background-repeat: repeat-x;
   //   animation: animatedBackground 40s linear infinite;
   // }
-  .contenidoParaLogin {
+  .scroll-content {
     // position: absolute;
-    // background: url('../assets/img/bg/bg.jpg') no-repeat transparent; //bg.png
-    // background-size: cover;
-    // height: 100%;
-    // width: 100%;
+   
+    // background: url('../../assets/img/misImg/bg/bglogin.png');    
+    background-size: cover;
+    height: 100%;
+    width: 100%;
     // z-index: 1;
     // background-position: center;
-    // text-align: center;
+    // margin-left: 0px;
+    background-color: lightblue;
+
     text-align: center;
     // margin-left: 0%;
+    // background: transparent;
+    // z-index: 1;
+    // background-repeat: repeat-x;
     
+  }
+  ion-item{
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  
+    background-color: lightblue;
+
+    text-align: center;
+
   }
 
   // #img{
   //   margin-top: 25%;
   // }
- .actSheet{
-  background-color: black;
- }
+//  .actSheet{
+//   background-color: black;
+//  }
 
 
   // @keyframes animatedBackground {
@@ -35,49 +51,61 @@ loginOK {
   //   100% { transform: scale(2.5);}
   // }
 
-  .splash-info {
-    position: relative;
-    z-index: 2;
-    margin-top: -64px;
-    text-align: center;
-  }
-  .splash-logo {
-    margin: auto;
-    background: url('../assets/img/appicon.png') repeat transparent;
-    background-size: 100%;
-    width: 128px;
-    height: 128px;
-  }
-  .splash-intro {
-    font-size: 18px;
-    font-weight: bold;
-    max-width: 80%;
-    margin: auto;
-  }
+  // .splash-info {
+  //   position: relative;
+  //   z-index: 2;
+  //   margin-top: -64px;
+  //   text-align: center;
+  // }
+  // .splash-logo {
+  //   margin: auto;
+  //   background: url('../assets/img/appicon.png') repeat transparent;
+  //   background-size: 100%;
+  //   width: 128px;
+  //   height: 128px;
+  // }
+  // .splash-intro {
+  //   font-size: 18px;
+  //   font-weight: bold;
+  //   max-width: 80%;
+  //   margin: auto;
+  // }
+  
+    .itemEdit{
+      background-color: lightblue;
+    }
+
   button.login {
     margin-top: 25px;
     background-color: lightblue;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 2px rgb(0, 0, 136);
     color: #333;
-
-    &.activated {
-      background-color: blue;
-    }
   }
+  .login:hover{
+    color:white;
+    background-color: rgb(0, 0, 136) !important;
+  }
+
+  .listaus:hover{
+    color:white;
+    background-color: rgb(0, 0, 136) !important;
+
+  }
+
   ion-title{
     text-align: center;
   }
-  form{
-      text-align: center;
+  // form{
+  //     text-align: center;
 
-  }
-  .iContent{
-    // background-image: url('../../../Archivos/background.jpg');
-    // background: url('../../../Archivos/background.jpg');
-    // background-repeat: no-repeat;
-    // background-size:cover;
-    // ##  Heading
-  }
+  // }
+  // .iContent{
+  //   // background-image: url('../../../Archivos/background.jpg');
+  //   // background: url('../../../Archivos/background.jpg');
+  //   // background-repeat: no-repeat;
+  //   // background-size:cover;
+  //   // ##  Heading
+  // }
   
   
 }
