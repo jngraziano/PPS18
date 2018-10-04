@@ -1,14 +1,17 @@
-import { Usuario } from './../../clases/usuario';
-import { Observable } from 'rxjs';
+import { User } from '../../providers';
+import { Usuario } from '../../clases/usuario';
+import { Observable } from 'rxjs/observable';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, ActionSheetController, ModalController } from 'ionic-angular';
 
-import { User } from '../../providers';
+
 import { MainPage } from '../';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+
 /**
+ * 
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
  * If you'd like to immediately put the user onto a login/signup page,
@@ -86,7 +89,25 @@ export class loginOK {
   // this.ListadoUsuariosObser.subscribe(x => {
 
   // }
-    
+  this.ListadoUsuariosObser.forEach((element) => {
+    this.cuentas = element;
+    let unUsuario: Usuario = this.cuentas.find(element =>(this.loginFields.email == element.usMail && (this.loginFields.password == element.usPass)));
+    if (unUsuario !== undefined) {
+      sessionStorage.setItem('usuario', JSON.stringify(unUsuario));
+      //pushea la pagina
+      this.navCtrl.push(MainPage);
+      
+    }
+    else{
+        let toast = this.toastCtrl.create({
+          message: "Acceso incorrecto.",
+          duration: 4000,
+          position: 'bottom'
+        });
+    }
+
+
+  });    
 
 
   }
