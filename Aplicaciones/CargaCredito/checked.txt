@@ -1,0 +1,5 @@
+
+***********INFO***********
+
+Dentro del app.components.ts -> rootPage = 'loginOK'; gracias a esto la pagina inicial es loginOK.
+

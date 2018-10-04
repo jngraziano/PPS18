@@ -2,7 +2,7 @@ import { Usuario } from './../../clases/usuario';
 import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, ActionSheetController, ModalController } from 'ionic-angular';
 
 import { User } from '../../providers';
 import { MainPage } from '../';
@@ -34,6 +34,7 @@ export class loginOK {
 
   constructor(public navCtrl: NavController,
     public user: User,
+    public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     public translateService: TranslateService,
     public actionSheetCtrl: ActionSheetController,
@@ -68,6 +69,7 @@ export class loginOK {
   */
 
     // MIO FALTA FIREBASE
+
     let flagNotOK: number=0;
     let user: Usuario = new Usuario("","");
 

@@ -13,6 +13,11 @@ import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
 
+//Inicializo FIRESTORE
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+//Credenciales firestore
+import { credenciales } from '../credenciales/credenciales';
 
 
 
@@ -44,6 +49,10 @@ export function provideSettings(storage: Storage) {
   imports: [
     BrowserModule,
     HttpClientModule,
+  
+    AngularFireModule.initializeApp(credenciales),
+    AngularFirestoreModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -53,6 +62,7 @@ export function provideSettings(storage: Storage) {
     }),
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,7 +75,6 @@ export function provideSettings(storage: Storage) {
     Camera,
     SplashScreen,
     StatusBar,
-    Camera,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }
