@@ -1,22 +1,29 @@
-import { User } from '../../providers';
-import { Usuario } from '../../clases/usuario';
-import { Observable } from 'rxjs/observable';
+
+
+import { ViewChild  } from "@angular/core";
+
 import { Component } from '@angular/core';
+
 import { TranslateService } from '@ngx-translate/core';
+
 import { IonicPage, NavController, ToastController, ActionSheetController, ModalController } from 'ionic-angular';
 
-
-import { MainPage } from '../';
-import { AngularFireModule } from 'angularfire2';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 
-/**
- * 
- * The Welcome Page is a splash page that quickly describes the app,
- * and then directs the user to create an account or log in.
- * If you'd like to immediately put the user onto a login/signup page,
- * we recommend not using the Welcome page.
-*/
+// import { AngularFireModule } from 'angularfire2';
+
+import { Observable } from 'rxjs';
+
+import { Usuario } from '../../clases/usuario';
+
+
+
+import { User } from '../../providers';
+import { MainPage } from '../';
+import { ContentPage } from "../content/content";
+// import {  } from "../../pages/pag";
+
+
 @IonicPage()
 @Component({
   selector: 'loginOK',
@@ -24,7 +31,7 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 })
 export class loginOK {
 
-  UsuarioColeccionFirebase : AngularFirestoreCollection<Usuario>
+  UsuarioColeccionFirebase : AngularFirestoreCollection<Usuario>;
   ListadoUsuariosObser: Observable<Usuario[]>;
   
   loginFields: { email: string, password: string } = {
@@ -33,9 +40,7 @@ export class loginOK {
   };
 
   cuentas: Array<Usuario>;
-
-    // Our translated text strings
-    private loginErrorString: string;
+  private loginErrorString: string;
 
   constructor(public navCtrl: NavController,
     public user: User,
@@ -43,27 +48,21 @@ export class loginOK {
     public toastCtrl: ToastController,
     public translateService: TranslateService,
     private fireStoreObj: AngularFirestore,
-    public actionSheetCtrl: ActionSheetController,
-  ) {
-    this.translateService.get('LOGIN_ERROR').subscribe((value) => {
-      this.loginErrorString = value;
-    })
+    public actionSheetCtrl: ActionSheetController) {
+
+      // this.translateService.get('LOGIN_ERROR').subscribe((value) => {
+      //   this.loginErrorString = value;
+      // })
 
    
    }
 
- 
-  // login() {
-  //   alert("Estoy en login()");
-  //   this.navCtrl.push('LoginPage');
-  // }
 
   //Funcion que va desde el form que borre en el html.
+  
   doLogin() {
 
-   
-
-    // SIN FIREBASE
+    //#region SIN FIREBASE
     // let flagNotOK: number=0;
     // let user: Usuario = new Usuario("","");
 
@@ -82,13 +81,19 @@ export class loginOK {
     //         flagNotOK=1;
 
     // }
+   //#endregion
    
-      
+    //#region Parte del spinner
+  
+
+  //#endregion
+
+
   this.UsuarioColeccionFirebase = this.fireStoreObj.collection<Usuario>('usuarios', ref=> ref.orderBy('id','asc'));
   this.ListadoUsuariosObser = this.UsuarioColeccionFirebase.valueChanges();
-  // this.ListadoUsuariosObser.subscribe(x => {
-
-  // }
+  this.ListadoUsuariosObser.subscribe(x => {
+      console.info("Conexión correcta con Firebase. Usuarios: ", x);
+    });
   this.ListadoUsuariosObser.forEach((element) => {
     this.cuentas = element;
     let unUsuario: Usuario = this.cuentas.find(element =>(this.loginFields.email == element.usMail && (this.loginFields.password == element.usPass)));
@@ -104,9 +109,8 @@ export class loginOK {
           duration: 4000,
           position: 'bottom'
         });
+        toast.present();
     }
-
-
   });    
 
 
@@ -147,7 +151,7 @@ export class loginOK {
     }
   }
 
-  signup() {
-    this.navCtrl.push('SignupPage');
-  }
+  // ionViewDidLoad() {
+  //   setTimeout(() => this.splash = false, 4000);
+  // }
 }
